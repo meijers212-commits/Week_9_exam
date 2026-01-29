@@ -1,3 +1,4 @@
+import os
 import mysql.connector
 from mysql.connector import Error
 
@@ -12,7 +13,7 @@ def get_db_connection():
     """
     try:
         connection = mysql.connector.connect(
-            host='mysql',
+            host= os.getenv("DB_HOST" ,'mysql'),
             user='root',
             password='rootpassword',
             database='classicmodels'

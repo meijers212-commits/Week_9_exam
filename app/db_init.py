@@ -1,3 +1,4 @@
+import os
 import mysql.connector
 from mysql.connector import Error
 import time
@@ -19,7 +20,7 @@ def init_database():
         try:
             # Connect to MySQL server (without specifying database)
             connection = mysql.connector.connect(
-                host='mysql',
+                host= os.getenv("DB_HOST" ,'mysql'),
                 user='root',
                 password='rootpassword',
                 use_pure=True
