@@ -8,6 +8,7 @@ spec:
   type: ClusterIP
   ports:
   - port: 8000
+    targetPort: 8000
     name: web-c
   selector:
     app: api-deploy

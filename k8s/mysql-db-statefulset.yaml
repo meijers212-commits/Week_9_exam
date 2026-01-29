@@ -6,7 +6,7 @@ spec:
   selector:
     matchLabels:
       app: mysql 
-  serviceName: headless-svc-mysql
+  serviceName: mysql
   replicas: 3 
   template:
     metadata:
@@ -19,10 +19,10 @@ spec:
         image: mysql:9.5.0
         ports:
         - containerPort: 3306
-          name: web-container
+          name: websql
         env:
-           - name: MYSQL_ROOT_PASSWORD
-             value: "rootpassword"
+        - name: MYSQL_ROOT_PASSWORD
+          value: "rootpassword"
         volumeMounts:
         - name: www
           mountPath: /var/lib/mysql

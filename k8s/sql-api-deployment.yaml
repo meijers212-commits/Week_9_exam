@@ -16,10 +16,12 @@ spec:
     spec:
       containers:
       - name: api
-        image: elazarmeijers/sql-app-a:v3
+        image: elazarmeijers/sql-app-a:v4
         imagePullPolicy: Always
         ports:
         - containerPort: 8000
         env:
-        
-        
+        - name: DB_HOST
+          value: "mysql" 
+        - name: DB_PASSWORD
+          value: "rootpassword"
