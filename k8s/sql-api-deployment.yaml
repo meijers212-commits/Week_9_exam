@@ -1,26 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: service-c-deploy
+  name: api-deploy
   labels:
-    app: service-c
+    app: api-deploy
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: service-c
+      app: api-deploy
   template:
     metadata:
       labels:
-        app: service-c
+        app: api-deploy
     spec:
       containers:
-      - name: nginx
-        image: elazarmeijers/sql-app-a:v2
+      - name: api
+        image: elazarmeijers/sql-app-a:v3
         imagePullPolicy: Always
         ports:
         - containerPort: 8000
         env:
-        - name: DB_HOST
-          value: "headless-svc-mysql"
+        
         

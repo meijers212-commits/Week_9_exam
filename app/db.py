@@ -13,7 +13,7 @@ def get_db_connection():
     """
     try:
         connection = mysql.connector.connect(
-            host= os.getenv("DB_HOST" ,'mysql'),
+            host= 'mysql',
             user='root',
             password='rootpassword',
             database='classicmodels'
